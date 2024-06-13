@@ -7,7 +7,7 @@ const passwordInput = document.getElementById("password");
 window.addEventListener("DOMContentLoaded", function () {
   const hasToken = checkToken();
   if (hasToken) {
-    redirect("/admin.html");
+    redirect("/index.html");
   }
 });
 
@@ -52,7 +52,7 @@ async function login() {
 
       const hasToken = checkToken();
       if (hasToken) {
-        redirect("/admin.html");
+        redirect("/index.html");
       }
     } else {
       handleLoginError(response);
