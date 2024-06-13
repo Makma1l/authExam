@@ -1,12 +1,9 @@
-// Import utility functions
 import { checkToken, redirect } from "./utils.js";
 
-// Get the form and input elements
 const form = document.forms[0];
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 
-// Check token on DOMContentLoaded
 window.addEventListener("DOMContentLoaded", function () {
   const hasToken = checkToken();
   if (hasToken) {
@@ -14,13 +11,12 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Initialize credentials object
+
 const credentials = {
   email: '',
   password: '',
 };
 
-// Update credentials on input change
 emailInput.oninput = function (event) {
   credentials.email = event.target.value;
 };
@@ -29,7 +25,6 @@ passwordInput.oninput = function (event) {
   credentials.password = event.target.value;
 };
 
-// Handle form submission
 form.onsubmit = function (event) {
   event.preventDefault();
   login();
@@ -48,22 +43,18 @@ async function login() {
       body: JSON.stringify(credentials),
     });
 
-    // Check if the response is successful
     if (response.ok) {
       const data = await response.json();
       const { access_token, refresh_token } = data;
 
-      // Store tokens in session and local storage
       sessionStorage.setItem("access_token", access_token);
       localStorage.setItem("refresh_token", refresh_token);
 
-      // Redirect if token is valid
       const hasToken = checkToken();
       if (hasToken) {
         redirect("/admin.html");
       }
     } else {
-      // Handle incorrect credentials
       handleLoginError(response);
     }
   } catch (error) {
@@ -71,9 +62,7 @@ async function login() {
   }
 }
 
-// Function to handle login errors
 function handleLoginError(response) {
-  // Assuming the API returns a 401 status code for incorrect credentials
   if (response.status === 401) {
     alert("Invalid email or password. Please try again.");
   } else {

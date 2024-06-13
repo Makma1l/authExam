@@ -221,8 +221,8 @@ form {
   border-radius: 20px;
   background-color: #1b1d2e;
   padding: 50px;
-  border-radius: 8px; /* Rounded corners can complement the soft shadow */
-  box-shadow: 0 4px 8px rgba(65, 119, 207, 0.5), 0 2px 8px rgba(94, 167, 245, 0.5); /* Soft white shadow */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(65, 119, 207, 0.5), 0 2px 8px rgba(94, 167, 245, 0.5);
   padding: 20px;
   margin: 20px;
 }
@@ -238,20 +238,20 @@ form {
   color: #fff;
   border: none;
   border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s, transform 0.2s;
   font-size: 16px;
   margin-bottom: 15px;
 }
 
 #login-btn:hover {
-  background-color: #3f399d; /* Darker shade on hover */
-  transform: translateY(-2px); /* Move button slightly up */
+  background-color: #3f399d;
+  transform: translateY(-2px);
 }
 
 #login-btn:active {
-  transform: translateY(0); /* Restore position when clicked */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Lighter shadow when clicked */
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 form p {
